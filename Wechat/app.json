@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/find/find",
+    "pages/music/music",
+    "pages/friend/friend",
+    "pages/center/center"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "backgroundColor": "#000"
+  },
+  "tabBar":{
+    "color": "#fff",
+    "selectedColor": "#f1f1f1",
+    "backgroundColor": "#212121",
+    "list": [{
+        "pagePath": "pages/find/find",
+        "text": "发现音乐",
+        "iconPath": "Image/find.png",
+        "selectedIconPath": "Image/find-active.png"
+      },
+      {
+        "pagePath": "pages/music/music",
+        "text": "我的音乐",
+        "iconPath": "Image/music.png",
+        "selectedIconPath": "Image/music-active.png"
+      },
+      {
+        "pagePath": "pages/friend/friend",
+        "text": "朋友",
+        "iconPath": "Image/friend.png",
+        "selectedIconPath": "Image/friend-active.png"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "text": "账号",
+        "iconPath": "Image/center.png",
+        "selectedIconPath": "Image/center-active.png"
+      }
+    ]
+  }
+}

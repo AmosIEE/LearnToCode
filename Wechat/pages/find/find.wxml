@@ -1,0 +1,83 @@
+
+<view class="head-nav">
+  <view bindtap="changenav" data-value="recommand" class="nav-item"><text class="nav-text {{(activeNav == 'recommand') ? 'active':''}}" data-value="recommand" >推荐</text></view>
+  <view bindtap="changenav" data-value="list" class="nav-item"><text class="nav-text  {{(activeNav == 'list') ? 'active':''}}" data-value="list">歌单</text></view>
+</view>
+<swiper class="contentContainer" current="{{currentPage}}" bindchange="changePage">
+  <swiper-item>
+    <scroll-view scroll-y="true" class="content"  id="recommand" > 
+      <swiper class="carousel" indicator-dots="true" autoplay="true" >
+        <block wx:for="{{carouselImages}}">
+          <swiper-item>
+            <image src="{{item.url}}" class="carousel-item"/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="recommandButtons">
+        <view class="inline-view buttonContainer">
+          <button class="recommandButton fm"></button>
+          <text>私人FM</text>
+        </view>
+        <view class="inline-view buttonContainer">
+          <button class="recommandButton dailyRecommand">{{today}}</button>
+          <text>每日推荐</text>
+        </view >
+        <view class="inline-view buttonContainer">
+          <button class="recommandButton topList"></button>
+          <text>榜单</text>
+        </view>
+      </view>
+      <view class="block">
+        <image src="../../Image/recommand.png" class="blockTitleImage"/>
+        <text>推荐歌单</text>
+        <navigator bindtap="showList" class="blockMore">更多</navigator>
+        <view class="blockContent">
+          <block wx:for="{{blockItems.recommand}}">
+            <view class="inline-view blockItem">
+              <image src="{{item.url}}" class="blockImage"/>
+              <text class="blockText">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+  <swiper-item>
+    <scroll-view scroll-y="true" class="content"  id="list"> 
+      <swiper class="carousel" indicator-dots="true" autoplay="true" >
+        <block wx:for="{{carouselImages}}">
+          <swiper-item>
+            <image src="{{item.url}}" class="carousel-item"/>
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="recommandButtons">
+        <view class="inline-view buttonContainer">
+          <button class="recommandButton fm"></button>
+          <text>私人FM</text>
+        </view>
+        <view class="inline-view buttonContainer">
+          <button class="recommandButton dailyRecommand">{{today}}</button>
+          <text>每日推荐</text>
+        </view >
+        <view class="inline-view buttonContainer">
+          <button class="recommandButton topList"></button>
+          <text>榜单</text>
+        </view>
+      </view>
+      <view class="block">
+        <image src="../../Image/recommand.png" class="blockTitleImage"/>
+        <text>推荐歌单</text>
+        <navigator class="blockMore">更多</navigator>
+        <view class="blockContent">
+          <block wx:for="{{blockItems.recommand}}">
+            <view class="inline-view blockItem">
+              <image src="{{item.url}}" class="blockImage"/>
+              <text class="blockText">{{item.text}}</text>
+            </view>
+          </block>
+        </view>
+      </view>
+    </scroll-view>
+  </swiper-item>
+</swiper>
